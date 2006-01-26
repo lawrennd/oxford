@@ -1,0 +1,5 @@
+# These are files that should be packaged for the FGPLVM software
+dir: html
+~/mlprojects/fgplvm/html/index.html
+dir: .
+~/mlprojects/oxford/matlab/br1561_6.3.pgm
