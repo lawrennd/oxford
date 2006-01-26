@@ -1,5 +1,9 @@
 function demManifold(pcs, digits);
 
+% DEMMANIFOLD Visualise the manifold of the rotated 6 data.
+
+% OXFORD
+
 load demManifold
 X = X(:, pcs);
 Y = uint8(-(double(Y-255)));
