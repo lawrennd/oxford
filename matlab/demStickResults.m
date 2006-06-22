@@ -1,4 +1,4 @@
-% DEMSTICKRESULTS1 Show the results of stick man optimisations interactively.
+% DEMSTICKRESULTS Show the results of stick man optimisations interactively.
 
 % OXFORD
 

@@ -1,6 +1,6 @@
 function demGPCov2D(ind)
 
-% DEMGPSCOV2D Simple demonstration of sampling from a covariance function.
+% DEMGPCOV2D Simple demonstration of sampling from a covariance function.
 % FORMAT
 % DESC shows two dimensions of the covariance matrix giving the joint
 % distribution and the conditional. DEMGPSAMPLE is run first to set the
