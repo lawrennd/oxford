@@ -1,5 +1,7 @@
 % DEMGPLVMTALK Show demos for GP-LVM talk in order.
 
+% OXFORD
+
 colordef white
 
 disp('Ready ... rotation of digit.')
