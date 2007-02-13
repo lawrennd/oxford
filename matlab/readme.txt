@@ -1,5 +1,10 @@
 The OXFORD toolbox is a set of demos used in motivating and describing the GP-LVM first used at a journal club in Oxford on January 27th 2006.
 
+Version 0.131
+-------------
+
+Update demGplvmTalk with a further stick man example for regressive dynamics. First used for MIT and Google talks.
+
 Version 0.13
 ------------
 

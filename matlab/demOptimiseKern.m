@@ -27,6 +27,33 @@ kern = trueKern;
 
 lengthScale = [0.05 0.1 0.25 0.5 1 2 4 8 16];
 counter = 0;
+
+figure(1)
+p = plot(x, y, markerType);
+set(p, 'markersize', markerSize, 'lineWidth', markerWidth);
+set(gca, 'fontname', 'times')
+set(gca, 'fontsize', 18)
+set(gca, 'ylim', [-2 1])
+set(gca, 'xlim', [-1.5 1.5])
+
+zeroAxes(gca);
+print('-depsc', ['../tex/diagrams/demOptimiseKern' num2str(counter) ...
+                 '.eps'])
+clf
+
+void = semilogx(NaN, NaN, 'bo-');
+set(gca, 'fontname', 'times')
+set(gca, 'fontsize', 18)
+set(gca, 'ylim', [-12 -4])
+set(gca, 'xlim', [0.025 32]) 
+grid on
+ylabel('log-likelihood')
+xlabel('length scale')
+print('-depsc', ['../tex/diagrams/demOptimiseKern' num2str(counter) ...
+                   '0.eps'])
+
+clf
+
 for i = 1:length(lengthScale)
   kern.comp{1}.inverseWidth = 1/(lengthScale(i)*lengthScale(i));
   K = kernCompute(kern, x);

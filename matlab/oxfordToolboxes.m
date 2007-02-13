@@ -8,5 +8,6 @@ importLatest('prior');
 importLatest('optimi');
 importLatest('mocap');
 importLatest('fgplvm');
+importLatest('gp');
 importLatest('datasets');
 importLatest('mltools');
