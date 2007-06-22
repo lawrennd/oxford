@@ -59,28 +59,50 @@ for i = 0:length(indTrain)
     set(gca, 'ytick', [-3 -2 -1 0 1 2 3]);
     set(gca, 'fontname', 'times', 'fontsize', 18, 'xlim', [-2 2], 'ylim', [-3 3])
     zeroAxes(gca);
-    print('-depsc', ['../tex/diagrams/demRegression' num2str(figNo) ...
+    print('-depsc', ['../tex/diagrams/demRegression' num2str(figNo-1) ...
                      '.eps'])
     figNo = figNo + 1;
   else
+    xTest = linspace(-2, 2, 200)';
+    kern = kernCreate(xTest, 'rbf');
+    % Change inverse variance (1/(lengthScale^2)))
+    kern.inverseWidth = 5;
+    
+    figure(figNo)
     p = [];
+    yPred = zeros(size(xTest));
+    ySd = sqrt(kernDiagCompute(kern, xTest));
+    h = plot(xTest, yPred, 'b-');
+    hold on
+    h = [h plot(xTest, 2*ySd, 'b--')];
+    h = [h plot(xTest, -2*ySd, 'b--')];
+    
+    set(h, 'linewidth', lineWidth)
+    set(gca, 'xtick', [-2 -1 0 1 2]);
+    set(gca, 'ytick', [-3 -2 -1 0 1 2 3]);
+    set(gca, 'fontname', 'times', 'fontsize', 18, 'xlim', [-2 2], 'ylim', [-3 3])
+    zeroAxes(gca);
+    print('-depsc', ['../tex/diagrams/demRegression' num2str(figNo-1) ...
+                     '.eps'])
+    figNo = figNo + 1;
+    
   end
   if i < length(indTrain)
     figure(figNo)
-    if i>0
+%    if i>0
       h = plot(xTest, yPred, 'b-');
       hold on
       h = [h plot(xTest, yPred + 2*ySd, 'b--')];
       h = [h plot(xTest, yPred - 2*ySd, 'b--')];
       set(h, 'linewidth', lineWidth)
-    end
+%    end
     p = [p plot(x(indTrain{i+1}), yTrue(indTrain{i+1}), markerType)];
     set(p, 'markersize', markerSize, 'linewidth', markerWidth);
     set(gca, 'xtick', [-2 -1 0 1 2]);
     set(gca, 'ytick', [-3 -2 -1 0 1 2 3]);
     set(gca, 'fontname', 'times', 'fontsize', 18, 'xlim', [-2 2], 'ylim', [-3 3])
     zeroAxes(gca);
-    print('-depsc', ['../tex/diagrams/demRegression' num2str(figNo) ...
+    print('-depsc', ['../tex/diagrams/demRegression' num2str(figNo-1) ...
                      '.eps'])
     figNo = figNo + 1;
   end

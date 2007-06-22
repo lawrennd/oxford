@@ -7,3 +7,4 @@ dir: .
 ~/mlprojects/oxford/matlab/demStick2.mat
 ~/mlprojects/oxford/matlab/demStick3.mat
 ~/mlprojects/oxford/matlab/demStick5.mat
+~/mlprojects/oxford/matlab/demWalkRun1.mat
