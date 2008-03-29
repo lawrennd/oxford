@@ -1,4 +1,9 @@
 % PREPDEMMANIFOLD Read in handwritten 6 and prepare for visualisation.
+% FORMAT
+% DESC reads in the digit six and prepares it for visualisation by
+% generating a data set of 360 rotated sixes.
+%
+% COPYRIGHT : Neil D. Lawrence, 2006
 
 % OXFORD
 
@@ -10,7 +15,7 @@ dimOne = size(sixImage);
 sixAngles = [260:5:360 0:5:35];
 nineAngles = 85:5:215; 
 
-angles = 0:1:360;
+angles = 0:1:359;
 i = 0;
 Y = zeros(length(angles), prod(dimOne));
 for i = 1:length(angles);
@@ -20,7 +25,6 @@ for i = 1:length(angles);
   start = round((dimTwo - dimOne)/2);
   cropImage = imcrop(rotImage, [start+1 dimOne-1]);
   Y(i, :) = cropImage(:)';
-  
 end 
 
 [u, v] = eig(cov(Y'));

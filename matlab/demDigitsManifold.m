@@ -1,6 +1,19 @@
 function demDigitsManifold(pcs, digits);
 
 % DEMDIGITSMANIFOLD Project and rotate an artificial data set of handwritten digits. 
+% FORMAT
+% DESC plots the principal components of the artificially rotated digit
+% data set and then shows each data point next to its projected position
+% in turn to give a small movie.
+% ARG pcs : the principal components to display as a vector (defaults to
+% [2 3]).
+% ARG digits : a string specifying whether to plot all the data or just
+% the portions that could be a six or a nine. For all the data specify
+% 'all' for just the six and nine specify 'sixnine';
+%
+% COPYRIGHT : Neil D. Lawrence, 2006
+%
+% SEEALSO : prepDemManifold
 
 % OXFORD
 

@@ -1,7 +1,14 @@
 function demCovFuncSample
 
 % DEMCOVFUNCSAMPLE Sample from some different covariance functions.
-
+% FORMAT
+% DESC samples from some different covariance functions with different
+% kernel parameters.
+%
+% COPYRIGHT : Neil D. Lawrence, 2006
+%
+% SEEALSO : kernCreate
+  
 % OXFORD
 
 randn('seed', 1e5)

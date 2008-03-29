@@ -6,7 +6,9 @@ function demSix
 % rotated versions of the six.
 % 
 % COPYRIGHT : Neil D. Lawrence, 2006
-
+%
+% SEEALSO : prepDemManifold
+  
 % OXFORD
 
 

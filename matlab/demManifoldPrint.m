@@ -1,7 +1,19 @@
 function demManifoldPrint(pcs, digits);
 
 % DEMMANIFOLDPRINT Print the principal components of the artificial digits data set.
-
+% FORMAT
+% DESC plots the principal components of the artificially rotated digit
+% data set along with uniformly selected images from the data.
+% ARG pcs : the principal components to display as a vector (defaults to
+% [2 3]).
+% ARG digits : a string specifying whether to plot all the data or just
+% the portions that could be a six or a nine. For all the data specify
+% 'all' for just the six and nine specify 'sixnine';
+%
+% COPYRIGHT : Neil D. Lawrence, 2006
+%
+% SEEALSO : prepDemManifold
+  
 % OXFORD
 
 if nargin < 2
