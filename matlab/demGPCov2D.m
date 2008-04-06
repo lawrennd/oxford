@@ -1,4 +1,4 @@
-function demGPCov2D(ind)
+function demGPCov2D(ind,bw)
 
 % DEMGPCOV2D Simple demonstration of sampling from a covariance function.
 % FORMAT
@@ -7,18 +7,33 @@ function demGPCov2D(ind)
 % covariance matrix.
 % ARG index : the indices of the two elements from the covariance matrix
 % for which the joint distribution should be displayed.
+% ARG bw : whether or not to prepare the plot with a black and white
+% output (default false).
 %
 % SEEALSO : demCovFuncSample, demGPSample
-% COPYRIGHT : Neil D. Lawrence, 2006
+% COPYRIGHT : Neil D. Lawrence, 2006, 2008
 
 % OXFORD
 
-conditionalLineStyle = '-';
-conditionalLineColour = [1 0 0];
-conditionalSize = 4;
-fixedLineStyle = '-';
-fixedLineColour = [0 1 0];
-fixedSize = 4;
+if bw == true
+  contourColour = [0 0 0];
+  contourLineStyle = '--';
+  conditionalLineStyle = '-.';
+  conditionalLineColour = [0 0 0];
+  conditionalSize = 4;
+  fixedLineStyle = '-';
+  fixedLineColour = [0 0 0];
+  fixedSize = 4;
+else
+  contourColour = [0 0 1];
+  contourLineStyle = '-';
+  conditionalLineStyle = '-';
+  conditionalLineColour = [1 0 0];
+  conditionalSize = 4;
+  fixedLineStyle = '-';
+  fixedLineColour = [0 1 0];
+  fixedSize = 4;
+end
 contourSize = 4;
 if nargin < 1
   ind = [1 2];
@@ -32,11 +47,12 @@ figure(1)
 clf
 [ax, cont, t] = basePlot(K, ind);
 set(cont, 'linewidth', contourSize);
-
+set(cont, 'linestyle', contourLineStyle, 'color', contourColour);
 figure(2)
 clf
 [ax, cont, t] = basePlot(K, ind);
 set(cont, 'linewidth', contourSize);
+set(cont, 'linestyle', contourLineStyle, 'color', contourColour);
 
 cont2 = line([f(1) f(1)], [-1 1]);
 set(cont2, 'linewidth', fixedSize)
@@ -46,6 +62,7 @@ figure(3)
 clf
 [ax, cont, t] = basePlot(K, ind);
 set(cont, 'linewidth', contourSize);
+set(cont, 'linestyle', contourLineStyle, 'color', contourColour);
 
 cont2 = line([f(1) f(1)], [-1 1]);
 set(cont2, 'linewidth', fixedSize)
@@ -62,10 +79,17 @@ set(pdf, 'linestyle', conditionalLineStyle, 'color', conditionalLineColour)
 
 for figNo = 1:3
   figure(figNo)
-  print('-depsc', ['../tex/diagrams/demGPCov2D' num2str(ind(1)) '_' ...
-                   num2str(ind(2)) ...
-                   '_' num2str(figNo) ...
-                   '.eps'])
+  if bw
+    print('-depsc', ['../tex/diagrams/demGPCov2D' num2str(ind(1)) '_' ...
+                     num2str(ind(2)) ...
+                     '_' num2str(figNo) ...
+                     'bw.eps'])
+  else
+    print('-depsc', ['../tex/diagrams/demGPCov2D' num2str(ind(1)) '_' ...
+                     num2str(ind(2)) ...
+                     '_' num2str(figNo) ...
+                     '.eps'])
+  end
 end
 
 function [ax, cont, t] = basePlot(K, ind)
