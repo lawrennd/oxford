@@ -1,0 +1,10 @@
+# These are files that should be packaged for the FGPLVM software
+dir: html
+~/mlprojects/oxford/html/index.html
+dir: .
+~/mlprojects/oxford/matlab/br1561_6.3.pgm
+~/mlprojects/oxford/matlab/demStick1.mat
+~/mlprojects/oxford/matlab/demStick2.mat
+~/mlprojects/oxford/matlab/demStick3.mat
+~/mlprojects/oxford/matlab/demStick5.mat
+~/mlprojects/oxford/matlab/demWalkRun1.mat

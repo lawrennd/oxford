@@ -1,0 +1,40 @@
+<head>
+<title>Gaussian Process Tutorial - MATLAB Software</title>
+</head>
+
+<body>
+<div class="section">
+<h1>Oxford Journal Club Examples</h1>
+
+<p>This page describes how to use the examples in the tutorial on the GP-LVM first presented at the <a href="http://www.robots.ox.ac.uk/~cvrg/">Computer Vision Reading Group</a> at Oxford's Visual Geometry group, but later presented at several venues, see this <a href="http://www.cs.man.ac.uk/neill-bin/publications/bibpage.cgi?type=talk">Talks Page</a> for details. 
+
+<p>For papers covering the subjects presented in the GP-LVM talks see <a href="http://www.cs.man.ac.uk/neill-bin/publications/bibpage.cgi?group=gplvm&printAbstract=1">this page</a>.
+
+
+RELEASEINFORMATION
+
+<p>Updated <code>demGplvmTalk</code> with a further stick man example for regressive dynamics. First used for MIT and Google talks.
+
+<h4>Version 0.13</h4>
+
+<p>Release made for talk at Manchester Computer Science (22nd June 2006).
+
+<h4>Version 0.12</h4>
+
+<p>Release made for talk at Cambridge University Engineering.
+
+<h4>Version 0.1</h4>
+
+<p>Initial release, set of demos to be used at Journal Club in Oxford on 27th January 2006. The prepDemManifold.m script requires the imrotate.m function from the image processing toolbox.
+
+
+<h3>Examples</h3>
+
+<p>The main example used is invoked with the command:
+
+<p><code>
+&gt;&gt; demGplvmTalk
+</code>
+
+</div>
+</body>
