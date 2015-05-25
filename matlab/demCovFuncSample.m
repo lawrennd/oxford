@@ -92,6 +92,15 @@ f = real(gsamp(zeros(1, size(x, 1)), K, numSamps))';
 a = plot(x, f);
 prepPlot(a);
 
+figure(9)
+kern = kernCreate(x, {'dexp'});
+kern.comp{1}.variance = 4;
+kern.comp{1}.decay = 1;
+K = kernCompute(kern, x);
+f = real(gsamp(zeros(1, size(x, 1)), K, numSamps))';
+a = plot(x, f);
+prepPlot(a);
+
 
 
 function prepPlot(a)

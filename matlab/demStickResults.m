@@ -40,7 +40,7 @@ switch r
 end
 disp('Ready ... pure GP-LVM on stick man.')
 disp('[void, connect] = mocapLoadTextData(''run1'');')
-disp('fgplvmResultsDynamic(''stick'', 1, ''stick'', connect)')
+disp('lvmResultsDynamic(''fgplvm'', ''stick'', 1, ''stick'', connect)')
 r = input('Type ''R'' to run or ''S'' to skip: ', 's');
 switch r
   case {'r', 'R'}
@@ -49,13 +49,13 @@ switch r
    % load connectivity matrix
    [void, connect] = mocapLoadTextData('run1');
    % Load the results and display dynamically.
-   fgplvmResultsDynamic('stick', 1, 'stick', connect)
+   lvmResultsDynamic('fgplvm', 'stick', 1, 'stick', connect)
  otherwise
 end
 disp('Ready ... back constrained GP-LVM on stick man.')
 % load connectivity matrix
 disp('[void, connect] = mocapLoadTextData(''run1'');')
-disp('fgplvmResultsDynamic(''stick'', 3, ''stick'', connect)')
+disp('lvmResultsDynamic(''fgplvm'', ''stick'', 3, ''stick'', connect)')
 r = input('Type ''R'' to run or ''S'' to skip: ', 's');
 switch r
   case {'r', 'R'}
@@ -64,13 +64,13 @@ switch r
    % load connectivity matrix
    [void, connect] = mocapLoadTextData('run1');
    % Load the results and display dynamically.
-   fgplvmResultsDynamic('stick', 3, 'stick', connect)
+   lvmResultsDynamic('fgplvm', 'stick', 3, 'stick', connect)
  otherwise
 end
 disp('Ready ... autoregressive dynamics GP-LVM on stick man.')
 % load connectivity matrix
 disp('[void, connect] = mocapLoadTextData(''run1'');')
-disp('fgplvmResultsDynamic(''stick'', 2, ''stick'', connect)')
+disp('lvmResultsDynamic(''fgplvm'', ''stick'', 2, ''stick'', connect)')
 r = input('Type ''R'' to run or ''S'' to skip: ', 's');
 switch r
   case {'r', 'R'}
@@ -79,13 +79,13 @@ switch r
    % load connectivity matrix
    [void, connect] = mocapLoadTextData('run1');
    % Load the results and display dynamically.
-   fgplvmResultsDynamic('stick', 2, 'stick', connect)
+   lvmResultsDynamic('fgplvm', 'stick', 2, 'stick', connect)
  otherwise
 end
-disp('Ready ... autoregressive dynamics GP-LVM on stick man.')
+disp('Ready ... regressive dynamics GP-LVM on stick man.')
 % load connectivity matrix
 disp('[void, connect] = mocapLoadTextData(''run1'');')
-disp('fgplvmResultsDynamic(''stick'', 5, ''stick'', connect)')
+disp('lvmResultsDynamic(''fgplvm'', ''stick'', 5, ''stick'', connect)')
 r = input('Type ''R'' to run or ''S'' to skip: ', 's');
 switch r
   case {'r', 'R'}
@@ -94,7 +94,22 @@ switch r
    % load connectivity matrix
    [void, connect] = mocapLoadTextData('run1');
    % Load the results and display dynamically.
-   fgplvmResultsDynamic('stick', 5, 'stick', connect)
+   lvmResultsDynamic('fgplvm', 'stick', 5, 'stick', connect)
+ otherwise
+end
+disp('Ready ... Bayesian GP-LVM on stick man.')
+% load connectivity matrix
+disp('[void, connect] = mocapLoadTextData(''run1'');')
+disp('lvmResultsDynamic(''vargplvm'', ''stick'', 1, ''stick'', connect)')
+r = input('Type ''R'' to run or ''S'' to skip: ', 's');
+switch r
+  case {'r', 'R'}
+   close all
+   clear all
+   % load connectivity matrix
+   [void, connect] = mocapLoadTextData('run1');
+   % Load the results and display dynamically.
+   lvmResultsDynamic('vargplvm', 'stick', 1, 'stick', connect)
  otherwise
 end
 disp('press any key to tidy up.')
